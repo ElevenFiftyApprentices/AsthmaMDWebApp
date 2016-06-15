@@ -116,6 +116,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildEntity.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
