@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace ShoppingListApp.Data
+namespace AsthmaMDWebApp.Data
 {
     public class Applicationuser : IdentityUser
     {
@@ -32,7 +32,7 @@ namespace ShoppingListApp.Data
         }
 
         // Entities.
-
+        public DbSet<UserProfile> UserProfiles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
