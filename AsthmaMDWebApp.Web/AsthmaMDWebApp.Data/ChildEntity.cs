@@ -8,6 +8,8 @@ namespace AsthmaMDWebApp.Data
         [Key]
         public int ChildId { get; set; }
 
+        public int UserId { get; set; }
+
         [Display(Name = "Child Name")]
         public string ChildName { get; set; }
 
@@ -18,10 +20,10 @@ namespace AsthmaMDWebApp.Data
         public float ChildHeight { get; set; }
 
         [Display(Name = "Peak Flow Meter")]
-        public int PeakFlowMeter { get; set; }
+        public int ChildPeakFlowMeter { get; set; }
 
         [Display(Name = "FEV-1")]
-        public float FEV1 { get; set; }
+        public float ChildFEV1 { get; set; }
 
         public DateTimeOffset CreatedUtc { get; set; }
 
