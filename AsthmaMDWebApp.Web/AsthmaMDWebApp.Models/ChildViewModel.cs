@@ -18,10 +18,10 @@ namespace AsthmaMDWebApp.Models
         public float ChildHeight { get; set; }
 
         [Display(Name = "Peak Flow Meter")]
-        public int PeakFlowMeter { get; set; }
+        public int ChildPeakFlowMeter { get; set; }
 
         [Display(Name = "FEV-1")]
-        public float FEV1 { get; set; }
+        public float ChildFEV1 { get; set; }
 
         public DateTimeOffset CreatedUtc { get; set; }
 

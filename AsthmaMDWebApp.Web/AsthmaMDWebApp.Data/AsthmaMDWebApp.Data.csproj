@@ -116,8 +116,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlertEntity.cs" />
     <Compile Include="ChildEntity.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="LogEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
