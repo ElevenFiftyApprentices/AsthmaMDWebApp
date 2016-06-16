@@ -25,7 +25,23 @@ namespace AsthmaMDWebApp.Services
                 return
                     ctx
                     .Logs
-                    .Where()
+                    .Where(e => e.ChildId == childId)
+                    .Select(
+                        e => new LogViewModel
+                        {
+                            LogId = e.LogId,
+                            LogDate = e.LogDate,
+                            LogPeakFlowMeter = e.LogPeakFlowMeter,
+                            LogFAV1 = e.LogFAV1,
+                            ChildId = e.ChildId,
+                            Child = e.Child,
+                            Medication = e.Medication,
+                            SeverityLevel = e.SeverityLevel,
+                            Symptoms = e.Symptoms,
+                            Triggers = e.Triggers,
+                            CreatedUtc = DateTimeOffset.UtcNow
+                        })
+                .ToArray();
             }
         }
 

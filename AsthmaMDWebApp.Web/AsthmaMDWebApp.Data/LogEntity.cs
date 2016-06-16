@@ -25,6 +25,10 @@ namespace AsthmaMDWebApp.Data
 
         public string Medication { get; set; }
 
+        public DateTimeOffset CreatedUtc { get; set; }
+
+        public DateTimeOffset ModifiedUtc { get; set; }
+
         [Display(Name ="Severity on a scale of One to Ten.")]
         [Range(1, 10)]
         public int SeverityLevel { get; set; }
