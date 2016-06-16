@@ -27,6 +27,7 @@ namespace AsthmaMDWebApp.Services
                     .Where(e => e.UserId == _userId)
                     .Select(e => new ChildViewModel
                      {
+                         UserId = e.UserId,
                          ChildId = e.ChildId,
                          ChildName = e.ChildName,
                          ChildAge = e.ChildAge,
@@ -69,7 +70,7 @@ namespace AsthmaMDWebApp.Services
                 var entity =
                     new ChildEntity
                     {
-                        UserId = vm.UserId,
+                        UserId = _userId,
                         ChildName = vm.ChildName,
                         ChildAge = vm.ChildAge,
                         ChildHeight = vm.ChildHeight,
