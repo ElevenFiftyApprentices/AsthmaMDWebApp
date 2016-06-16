@@ -100,7 +100,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AsthmaMDWebApp.Models\AsthmaMDWebApp.Models.csproj">
+      <Project>{3783581B-BA5C-4BEA-8789-2B1D05ACEB24}</Project>
+      <Name>AsthmaMDWebApp.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

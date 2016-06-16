@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChildController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -270,6 +271,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Child\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -278,6 +280,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AsthmaMDWebApp.Models\AsthmaMDWebApp.Models.csproj">
+      <Project>{3783581B-BA5C-4BEA-8789-2B1D05ACEB24}</Project>
+      <Name>AsthmaMDWebApp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AsthmaMDWebApp.Services\AsthmaMDWebApp.Services.csproj">
+      <Project>{658B8F81-AC0A-44B4-9DF0-A658D38AF509}</Project>
+      <Name>AsthmaMDWebApp.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
