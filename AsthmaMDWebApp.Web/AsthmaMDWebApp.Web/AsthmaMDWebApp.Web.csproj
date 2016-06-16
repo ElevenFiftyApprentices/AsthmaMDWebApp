@@ -210,9 +210,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\AsthmaDB.mdf" />
-    <Content Include="App_Data\AsthmaDB_log.ldf">
-      <DependentUpon>AsthmaDB.mdf</DependentUpon>
+    <Content Include="App_Data\AsthmaDb.mdf" />
+    <Content Include="App_Data\AsthmaDb_log.ldf">
+      <DependentUpon>AsthmaDb.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />

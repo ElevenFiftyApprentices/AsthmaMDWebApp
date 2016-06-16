@@ -9,11 +9,14 @@ namespace AsthmaMDWebApp.Services
 {
     public class ChildService
     {
-
+        //private UserService us;
+        //private UserProfile up;
         private readonly Guid _userId;
 
         public ChildService(Guid userId)
         {
+            //us = new UserService(userId.ToString());
+            //up = us.GetProfile(up);
             _userId = userId;
         }
 
@@ -71,6 +74,7 @@ namespace AsthmaMDWebApp.Services
                     new ChildEntity
                     {
                         UserId = _userId,
+                        //ChildName = up.FirstName,
                         ChildName = vm.ChildName,
                         ChildAge = vm.ChildAge,
                         ChildHeight = vm.ChildHeight,
