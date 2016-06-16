@@ -34,7 +34,12 @@ namespace AsthmaMDWebApp.Web.Controllers
         [HttpGet]
         public ActionResult CreateChild(ChildViewModel vm)
         {
-            var vm = new ChildViewModel();
+            if(!ModelState.IsValid) return View(vm);
+            if (!_svc.Value.CreateChild(vm))
+            {
+                ModelState.AddModelError("", "Unable to  add child");
+            }
+            return RedirectToAction("Index");
         }
     }
 }

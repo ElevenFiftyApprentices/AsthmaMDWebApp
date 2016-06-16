@@ -104,6 +104,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AsthmaMDWebApp.Data\AsthmaMDWebApp.Data.csproj">
+      <Project>{2D145C65-A09C-4622-872F-5A35832FEAB5}</Project>
+      <Name>AsthmaMDWebApp.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AsthmaMDWebApp.Models\AsthmaMDWebApp.Models.csproj">
       <Project>{3783581B-BA5C-4BEA-8789-2B1D05ACEB24}</Project>
       <Name>AsthmaMDWebApp.Models</Name>

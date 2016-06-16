@@ -1,4 +1,5 @@
-﻿using AsthmaMDWebApp.Models;
+﻿using AsthmaMDWebApp.Data;
+using AsthmaMDWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,51 @@ namespace AsthmaMDWebApp.Services
                         ChildFEV1 = e.ChildFEV1
                     })
                     .ToList();
+            }
+        }
+
+        public ChildViewModel GetChildById(int childId)
+        {
+            ChildEntity entity;
+            using (var ctx = new AsthmaDbcontext())
+            {
+                entity =
+                    ctx
+                    .Where(e => e.UserId == _userId && e.ChildId == childId);
+            }
+            return
+                new ChildViewModel
+                {
+                    ChildId = entity.ChildId,
+                    ChildName = entity.ChildName,
+                    ChildAge = entity.ChildAge,
+                    ChildHeight = entity.ChildHeight,
+                    ChildFEV1 = entity.ChildFEV1,
+                    ChildPeakFlowMeter = entity.ChildPeakFlowMeter,
+                    CreatedUtc = entity.CreatedUtc,
+                    Logs = entity.Logs,
+                    Alerts = entity.Alerts,
+                    Gender = (ChildViewModel.GenderType)entity.Gender
+                };
+        }
+
+        public bool CreateChild(ChildViewModel vm)
+        {
+            using (var ctx = new AsthmaDbContext())
+            {
+                var entity =
+                    new ChildEntity
+                    {
+                        ChildId = vm.ChildId,
+                        ChildName = vm.ChildName,
+                        ChildAge = vm.ChildAge,
+                        ChildHeight = vm.ChildHeight,
+                        ChildFEV1 = vm.ChildFEV1,
+                        ChildPeakFlowMeter = vm.ChildPeakFlowMeter,
+                        CreatedUtc = DateTimeOffset.UtcNow
+                    };
+                ctx.Children.Add(entity);
+                return ctx.SaveChanges() == 1;
             }
         }
     }
