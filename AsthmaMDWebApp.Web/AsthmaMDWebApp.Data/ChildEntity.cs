@@ -10,7 +10,7 @@ namespace AsthmaMDWebApp.Data
         [Key]
         public int ChildId { get; set; }
 
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
 
         [Display(Name = "Child Name")]
         public string ChildName { get; set; }

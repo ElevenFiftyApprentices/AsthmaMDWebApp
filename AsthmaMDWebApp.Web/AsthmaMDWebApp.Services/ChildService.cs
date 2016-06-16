@@ -19,22 +19,21 @@ namespace AsthmaMDWebApp.Services
 
         public IEnumerable<ChildViewModel> GetChildren()
         {
-            using (var ctx = new AsthmaDbcontext())
+            using (var ctx = new AsthmaDbContext())
             {
-                var kids = ctx
-                        .Children
-                        .Where(e => e.UserId == _userId);
-                return kids
-                    .ctx
+                return
+                ctx
+                    .Children
+                    .Where(e => e.UserId == _userId)
                     .Select(e => new ChildViewModel
-                    {
-                        ChildId = e.ChildId,
-                        ChildName = e.ChildName,
-                        ChildAge = e.ChildAge,
-                        ChildHeight = e.ChildHeight,
-                        ChildPeakFlowMeter = e.ChildPeakFlowMeter,
-                        ChildFEV1 = e.ChildFEV1
-                    })
+                     {
+                         ChildId = e.ChildId,
+                         ChildName = e.ChildName,
+                         ChildAge = e.ChildAge,
+                         ChildHeight = e.ChildHeight,
+                         ChildPeakFlowMeter = e.ChildPeakFlowMeter,
+                         ChildFEV1 = e.ChildFEV1
+                     })
                     .ToList();
             }
         }
@@ -42,11 +41,12 @@ namespace AsthmaMDWebApp.Services
         public ChildViewModel GetChildById(int childId)
         {
             ChildEntity entity;
-            using (var ctx = new AsthmaDbcontext())
+            using (var ctx = new AsthmaDbContext())
             {
                 entity =
                     ctx
-                    .Where(e => e.UserId == _userId && e.ChildId == childId);
+                    .Children
+                    .SingleOrDefault(e => e.UserId == _userId && e.ChildId == childId);
             }
             return
                 new ChildViewModel
