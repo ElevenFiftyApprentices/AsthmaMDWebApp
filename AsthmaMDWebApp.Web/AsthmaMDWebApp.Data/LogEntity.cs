@@ -28,5 +28,7 @@ namespace AsthmaMDWebApp.Data
         [Display(Name ="Severity on a scale of One to Ten.")]
         [Range(1, 10)]
         public int SeverityLevel { get; set; }
+
+        public ChildEntity Child { get; set; }
     }
 }

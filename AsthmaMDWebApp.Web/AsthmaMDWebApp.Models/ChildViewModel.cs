@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AsthmaMDWebApp.Data;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace AsthmaMDWebApp.Models
@@ -26,6 +28,10 @@ namespace AsthmaMDWebApp.Models
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset ModifiedUtc { get; set; }
+
+        public ICollection<LogEntity> Logs { get; set; }
+
+        public ICollection<AlertEntity> Alerts { get; set; }
 
         public GenderType Gender { get; set; }
 

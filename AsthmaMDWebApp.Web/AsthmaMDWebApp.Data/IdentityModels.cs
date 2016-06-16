@@ -33,6 +33,7 @@ namespace AsthmaMDWebApp.Data
 
         // Entities.
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<ChildEntity> Children { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
