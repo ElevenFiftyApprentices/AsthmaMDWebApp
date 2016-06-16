@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AsthmaMDWebApp.Data;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace AsthmaMDWebApp.Models
@@ -7,6 +9,8 @@ namespace AsthmaMDWebApp.Models
     {
         [Key]
         public int ChildId { get; set; }
+
+        public Guid UserId { get; set; }
 
         [Display(Name = "Child Name")]
         public string ChildName { get; set; }

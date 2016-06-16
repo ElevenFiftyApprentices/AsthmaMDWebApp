@@ -21,5 +21,11 @@ namespace AsthmaMDWebApp.Services
                 _UserProfile = entity;
             }
         }
+
+        public UserProfile GetProfile(UserProfile up)
+        {
+            up = _UserProfile;
+            return up;
+        }
     }
 }

@@ -1,26 +1,29 @@
-﻿using AsthmaMDWebApp.Data;
-using AsthmaMDWebApp.Services;
+﻿using AsthmaMDWebApp.Services;
+using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using AsthmaMDWebApp.Data;
 
 namespace AsthmaMDWebApp.Web.Controllers
 {
-    public class UserController
+    public class UserController : Controller
     {
         private readonly Lazy<UserService> _svc;
+        public UserProfile _UserProfile;
 
         public UserController()
         {
+            User.Identity.GetUserId();
+
             _svc =
                 new Lazy<UserService>(
                     () =>
                     {
-                        User.Identity.GetUserId();
+                        var userId = User.Identity.GetUserId();
                         return new UserService(userId);
                     });
+
+            _UserProfile = _svc.Value.GetProfile(_UserProfile);
         }
     }
 }

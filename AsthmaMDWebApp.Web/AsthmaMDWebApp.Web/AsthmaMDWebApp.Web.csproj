@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChildController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -272,6 +273,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Child\Index.cshtml" />
+    <Content Include="Views\Child\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -284,8 +287,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AsthmaMDWebApp.Data\AsthmaMDWebApp.Data.csproj">
-      <Project>{2D145C65-A09C-4622-872F-5A35832FEAB5}</Project>
+      <Project>{2d145c65-a09c-4622-872f-5a35832feab5}</Project>
       <Name>AsthmaMDWebApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AsthmaMDWebApp.Models\AsthmaMDWebApp.Models.csproj">
+      <Project>{3783581B-BA5C-4BEA-8789-2B1D05ACEB24}</Project>
+      <Name>AsthmaMDWebApp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AsthmaMDWebApp.Services\AsthmaMDWebApp.Services.csproj">
+      <Project>{658B8F81-AC0A-44B4-9DF0-A658D38AF509}</Project>
+      <Name>AsthmaMDWebApp.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\AsthmaMDWebApp.Services\AsthmaMDWebApp.Services.csproj">
       <Project>{658B8F81-AC0A-44B4-9DF0-A658D38AF509}</Project>
