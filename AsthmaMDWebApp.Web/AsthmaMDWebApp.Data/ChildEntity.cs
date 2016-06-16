@@ -12,19 +12,14 @@ namespace AsthmaMDWebApp.Data
 
         public Guid UserId { get; set; }
 
-        [Display(Name = "Child Name")]
         public string ChildName { get; set; }
 
-        [Display(Name = "Child Age")]
         public int ChildAge { get; set; }
 
-        [Display(Name = "Child Height")]
         public float ChildHeight { get; set; }
 
-        [Display(Name = "Peak Flow Meter")]
         public int ChildPeakFlowMeter { get; set; }
 
-        [Display(Name = "FEV-1")]
         public float ChildFEV1 { get; set; }
 
         public DateTimeOffset CreatedUtc { get; set; }

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AsthmaMDWebApp.Models.ChildViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildHeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildPeakFlowMeter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildFEV1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildHeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildPeakFlowMeter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildFEV1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedUtc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedUtc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ChildId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ChildId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ChildId })
+        </td>
+    </tr>
+}
+
+</table>

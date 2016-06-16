@@ -1,5 +1,6 @@
 ﻿using AsthmaMDWebApp.Models;
 using AsthmaMDWebApp.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +15,16 @@ namespace AsthmaMDWebApp.Web.Controllers
 
         private readonly Lazy<ChildService> _svc;
 
-        //public ChildController()
-        //{
-        //    _svc =
-        //        new Lazy<ChildService>(
-        //            () =>
-        //            {
-        //                var userId = Guid.Parse(User.Identity.GetUserId());
-        //                return new ChildService(userId);
-        //            });
-        //}
+        public ChildController()
+        {
+            _svc =
+                new Lazy<ChildService>(
+                    () =>
+                    {
+                        var userId = Guid.Parse(User.Identity.GetUserId());
+                        return new ChildService(userId);
+                    });
+        }
 
         public ActionResult Index()
         {
@@ -31,14 +32,25 @@ namespace AsthmaMDWebApp.Web.Controllers
             return View(kids);
         }
 
-        [HttpGet]
-        public ActionResult CreateChild(ChildViewModel vm)
+        public ActionResult Create()
         {
-            if(!ModelState.IsValid) return View(vm);
+            var vm = new ChildViewModel();
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ChildViewModel vm)
+        {
+            if (!ModelState.IsValid) return View(vm);
+
             if (!_svc.Value.CreateChild(vm))
             {
-                ModelState.AddModelError("", "Unable to  add child");
+                ModelState.AddModelError("", "Unable to create child");
+                return View(vm);
             }
+
             return RedirectToAction("Index");
         }
     }

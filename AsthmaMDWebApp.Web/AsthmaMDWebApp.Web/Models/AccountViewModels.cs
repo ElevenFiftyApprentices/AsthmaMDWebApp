@@ -88,7 +88,6 @@ namespace AsthmaMDWebApp.Web.Models
 
         public string LastName { get; set; }
 
-        [DataType(DataType.PhoneNumber)]
         public int PhoneNumber { get; set; }
 
         public string Address1 { get; set; }

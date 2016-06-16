@@ -199,6 +199,7 @@
     <Compile Include="Controllers\ChildController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -272,11 +273,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Child\Index.cshtml" />
+    <Content Include="Views\Child\Create.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Views\Child\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -286,9 +286,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AsthmaMDWebApp.Data\AsthmaMDWebApp.Data.csproj">
+      <Project>{2d145c65-a09c-4622-872f-5a35832feab5}</Project>
+      <Name>AsthmaMDWebApp.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AsthmaMDWebApp.Models\AsthmaMDWebApp.Models.csproj">
       <Project>{3783581B-BA5C-4BEA-8789-2B1D05ACEB24}</Project>
       <Name>AsthmaMDWebApp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AsthmaMDWebApp.Services\AsthmaMDWebApp.Services.csproj">
+      <Project>{658B8F81-AC0A-44B4-9DF0-A658D38AF509}</Project>
+      <Name>AsthmaMDWebApp.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\AsthmaMDWebApp.Services\AsthmaMDWebApp.Services.csproj">
       <Project>{658B8F81-AC0A-44B4-9DF0-A658D38AF509}</Project>

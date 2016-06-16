@@ -160,25 +160,25 @@ namespace AsthmaMDWebApp.Web.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
-                    //Adds extra properties to AspnetUser
-                    UserProfile UserProfile = new UserProfile();
+                    ////Adds extra properties to AspnetUser
+                    //UserProfile UserProfile = new UserProfile();
 
-                    using (var ctx = new AsthmaDbContext())
-                    {
-                        //Creates the properties
-                        UserProfile.UserProfileId = user.Id;
-                        UserProfile.FirstName = model.FirstName;
-                        UserProfile.MiddleInitial = model.MiddleInitial;
-                        UserProfile.LastName = model.LastName;
-                        UserProfile.PhoneNumber = model.PhoneNumber;
-                        UserProfile.Address1 = model.Address1;
-                        UserProfile.Address2 = model.Address2;
-                        UserProfile.ZipCode = model.ZipCode;
+                    //using (var ctx = new AsthmaDbContext())
+                    //{
+                    //    //Creates the properties
+                    //    UserProfile.UserProfileId = user.Id;
+                    //    UserProfile.FirstName = model.FirstName;
+                    //    UserProfile.MiddleInitial = model.MiddleInitial;
+                    //    UserProfile.LastName = model.LastName;
+                    //    UserProfile.PhoneNumber = model.PhoneNumber;
+                    //    UserProfile.Address1 = model.Address1;
+                    //    UserProfile.Address2 = model.Address2;
+                    //    UserProfile.ZipCode = model.ZipCode;
 
-                        //Saves to the DB
-                        ctx.UserProfiles.Add(UserProfile);
-                        ctx.SaveChanges();
-                    }
+                    //    //Saves to the DB
+                    //    ctx.UserProfiles.Add(UserProfile);
+                    //    ctx.SaveChanges();
+                    //}
 
                         return RedirectToAction("Index", "Home");
                 }
