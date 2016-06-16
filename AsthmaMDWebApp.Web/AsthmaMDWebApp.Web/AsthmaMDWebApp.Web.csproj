@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -285,6 +286,10 @@
     <ProjectReference Include="..\AsthmaMDWebApp.Data\AsthmaMDWebApp.Data.csproj">
       <Project>{2D145C65-A09C-4622-872F-5A35832FEAB5}</Project>
       <Name>AsthmaMDWebApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AsthmaMDWebApp.Services\AsthmaMDWebApp.Services.csproj">
+      <Project>{658B8F81-AC0A-44B4-9DF0-A658D38AF509}</Project>
+      <Name>AsthmaMDWebApp.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
