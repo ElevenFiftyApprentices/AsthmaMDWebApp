@@ -31,7 +31,5 @@ namespace AsthmaMDWebApp.Data
         public string AlertName { get; set; }
 
         public uint Frequency { get; set; }
-
-        public ChildEntity Child { get; set; }
     }
 }
