@@ -34,9 +34,17 @@ namespace AsthmaMDWebApp.Web.Controllers
 
         public ActionResult Create()
         {
-            var vm = new ChildViewModel();
+            try
+            {
+                var vm = new ChildViewModel();
 
-            return View(vm);
+                return View(vm);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("Argument Exception. Redirecting to Child.");
+                return RedirectToAction("Index", "Child", null);
+            }
         }
 
         [HttpPost]
@@ -53,5 +61,6 @@ namespace AsthmaMDWebApp.Web.Controllers
 
             return RedirectToAction("Index");
         }
+
     }
 }

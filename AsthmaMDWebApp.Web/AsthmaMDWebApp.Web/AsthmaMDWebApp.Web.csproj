@@ -276,11 +276,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Child\Index.cshtml" />
     <Content Include="Views\Child\Create.cshtml" />
+    <Content Include="Views\Log\Index.cshtml" />
+    <Content Include="Views\Log\Create.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\NewFolder1\" />
-    <Folder Include="Views\Log\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

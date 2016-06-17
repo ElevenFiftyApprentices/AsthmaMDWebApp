@@ -1,4 +1,5 @@
-﻿using AsthmaMDWebApp.Services;
+﻿using AsthmaMDWebApp.Models;
+using AsthmaMDWebApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,39 @@ namespace AsthmaMDWebApp.Web.Controllers
     {
         private readonly Lazy<LogService> _svc;
 
-        public ActionResult Index()
+        public ActionResult Index(int childId)
         {
-            return View();
+            var logs = _svc.Value.GetLogs(childId);
+            return View(logs);
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            try
+            {
+                var vm = new LogViewModel();
+
+                return View(vm);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("Argument Exception. Redirecting to child select.");
+                return RedirectToAction("Index", "Child", null);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Create(LogViewModel vm, int logId)
+        {
+            if (ModelState.IsValid) return View(vm);
+            if (!_svc.Value.CreateLog(vm, logId))
+            {
+                ModelState.AddModelError("", "Unable to add log.");
+                return View(vm);
+            }
+            return RedirectToAction("Index", new { id = Url.RequestContext.RouteData.Values["id"]});
+        }
+        
     }
 }
