@@ -163,17 +163,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\AsthmaMDWebApp.Data\AsthmaMDWebApp.Data.csproj">
       <Project>{2D145C65-A09C-4622-872F-5A35832FEAB5}</Project>
       <Name>AsthmaMDWebApp.Data</Name>
@@ -182,17 +171,6 @@
       <Project>{3783581B-BA5C-4BEA-8789-2B1D05ACEB24}</Project>
       <Name>AsthmaMDWebApp.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
