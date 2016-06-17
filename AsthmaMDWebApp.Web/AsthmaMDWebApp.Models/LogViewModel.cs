@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AsthmaMDWebApp.Data;
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace AsthmaMDWebApp.Models
 {
@@ -28,8 +26,14 @@ namespace AsthmaMDWebApp.Models
 
         public string Medication { get; set; }
 
+        public DateTimeOffset CreatedUtc { get; set; }
+
+        public DateTimeOffset ModifiedUtc { get; set; }
+
         [Display(Name = "Severity on a scale of One to Ten.")]
         [Range(1, 10)]
         public int SeverityLevel { get; set; }
+
+        public ChildEntity Child { get; set; }
     }
 }

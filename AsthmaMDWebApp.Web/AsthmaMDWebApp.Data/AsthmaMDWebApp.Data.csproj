@@ -164,9 +164,9 @@
     <Compile Include="Migrations\201606161519408_init.Designer.cs">
       <DependentUpon>201606161519408_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606171403364_gotridoflists.cs" />
-    <Compile Include="Migrations\201606171403364_gotridoflists.Designer.cs">
-      <DependentUpon>201606171403364_gotridoflists.cs</DependentUpon>
+    <Compile Include="Migrations\201606171422314_UpdatedChild.cs" />
+    <Compile Include="Migrations\201606171422314_UpdatedChild.Designer.cs">
+      <DependentUpon>201606171422314_UpdatedChild.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,8 +179,8 @@
     <EmbeddedResource Include="Migrations\201606161519408_init.resx">
       <DependentUpon>201606161519408_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606171403364_gotridoflists.resx">
-      <DependentUpon>201606171403364_gotridoflists.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606171422314_UpdatedChild.resx">
+      <DependentUpon>201606171422314_UpdatedChild.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

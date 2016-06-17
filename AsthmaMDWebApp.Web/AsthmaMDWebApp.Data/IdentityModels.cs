@@ -34,6 +34,8 @@ namespace AsthmaMDWebApp.Data
         // Entities.
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<ChildEntity> Children { get; set; }
+        public DbSet<LogEntity> Logs { get; set; }
+        public DbSet<AlertEntity> Alerts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -44,6 +46,7 @@ namespace AsthmaMDWebApp.Data
                     .Add(new IdentityUserLoginConfiguration())
                     .Add(new IdentityUserRoleConfiguration());
         }
+
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
